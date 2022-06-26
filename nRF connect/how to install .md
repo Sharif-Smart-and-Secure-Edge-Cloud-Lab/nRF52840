@@ -7,3 +7,6 @@ nRF connect helps develop programs and upload them to the board. First, nRF Conn
 After having the app installed, there are plenty of applications available to get the board worked by. For the complete installation and having the IDE environment for development, Linux users must go through the procedures available in the *Getting Started Assistant*. On the other hand Windows users should use the *Toolchain Manager*.
 In the toolchain manager, there are some version of the toolchain manager to be installed.The latest version is recommended for use. Soon after the app went through the installing procees, The * Open VScode* button apears. So it is advisable to have the VScode pre-installed on yout mechine.There should some extentions be added to the VScode; This can be done either through the toolchain manager or one can manually get them added. these ectentions are listed in the below image. For convinience, you can simply search *nordic* in *VScode's extention tab* and there exist an extention pack which installs all the 8 needed extentions at once.
 
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/extentions.jpg)
+
+
