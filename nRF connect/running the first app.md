@@ -33,6 +33,9 @@ if the whole process goes well, the output will be like below:
 
 on the action pannel at the left there exist some useful actions. build action, rebuilds the project. the *flash* action is used to upload the built code to the board
 after upoading the code the result will be like this:
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/flash%20res.jpg)
+THen we can open the board's terminal to see it's printed output by the below icon:
+
 
 
 
