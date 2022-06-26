@@ -11,3 +11,8 @@ First we need to create an app. In the welcome page click on *create a new appli
 then the below fields apear. you need to fill the fields with appropriate information. It is recommended thet you have your board connected to the PC.
 Avove there exist to options, you can go for the *freestanding* one. This option works when the SDK is preinstalled. 
 There you can still find the SDK installation INFOs. Then you need to name the app and place its location. The remaining field provides built-in example apps. here we use Blinky built-in app which turns LED1 on and off every second.  
+
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/app%20fields.jpg)
+
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/built%20in%20apps.jpg)
+
