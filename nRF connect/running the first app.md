@@ -20,5 +20,11 @@ There you can still find the SDK installation INFOs. Then you need to name the a
 
 # BUILDING CONFIGURATION
 After the previous part, now we need to build a configuration. the output here will be a build folder in the specified directory
-the previous part creates some additional files which are used to create the build file here in this step.these files are as follows :
+the previous part creates some additional files which are used to create the build file here in this step.these files are as follows:
+
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/app%20files.jpg)
+
+Here it is really crucial to have the previous steps done correctly. I myself encountered some randomized problem with CMAKE  that i still don't know how to solve them or how they can be solved. these problems occured randomly and solved randomly, too. These problems result in the build process not going properly
+for creating build files there exist a icon next to the application where the build fields can be visible there. it is like below:
+
 
