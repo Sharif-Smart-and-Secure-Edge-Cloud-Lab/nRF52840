@@ -38,7 +38,7 @@ THen we can open the board's terminal to see it's printed output by the below ic
 ![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/open%20terminal.jpg)
 
 
-
+the original example codes with some changes are attached by this file. threads example is also created. this attached thread app uses all 4 LEDs to blink with different frequencies, while the original ones only used the first two LEDS.
 
 
 
