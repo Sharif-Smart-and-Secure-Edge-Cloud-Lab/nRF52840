@@ -29,5 +29,10 @@ for creating build files there exist a icon next to the application where the bu
 ![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/build.jpg)
 it is advisable that both of the checkboxes be checked. then you can click on *create configuration*.
 if the whole process goes well, the output will be like below:
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/build%20results.jpg)
+
+on the action pannel at the left there exist some useful actions. build action, rebuilds the project. the *flash* action is used to upload the built code to the board
+after upoading the code the result will be like this:
+
 
 
