@@ -4,4 +4,5 @@ There exist two switches, which must be appropraitely set for the board to start
 This switch has two states: ON,OFF. this is the main switch to turn the whole board on or off.
 Second, there is a three state switch: Li-po,VDD,USB. this switch determines the board source of power. for having the board works properly while connected to the computer, this switch must be on VDD.
 after these settings LED5 must become turned on. If the board has the factory program compiled to it, one sees that LED1 starts blinking and whenever each of the 4 buttons at the right bottommost of the board are pressed, the corresponding LED gets turned on.
-Here is a [link](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK/GetStarted?lang=en#infotabs) where you can find the whole procedure through.
+Here is a [link](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK/GetStarted?lang=en#infotabs) where you can find the whole procedure through. For the factory program you can upload the *preflash* example on the board. the procedure is available [here](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_nrf5_v16.0.0%2Fpreflash_example.html&cp=6_1_4_6_23)
+![alt text][board]
