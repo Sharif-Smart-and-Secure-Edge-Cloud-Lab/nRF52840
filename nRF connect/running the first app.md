@@ -26,5 +26,8 @@ the previous part creates some additional files which are used to create the bui
 
 Here it is really crucial to have the previous steps done correctly. I myself encountered some randomized problem with CMAKE  that i still don't know how to solve them or how they can be solved. these problems occured randomly and solved randomly, too. These problems result in the build process not going properly
 for creating build files there exist a icon next to the application where the build fields can be visible there. it is like below:
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/build.jpg)
+it is advisable that both of the checkboxes be checked. then you can click on *create configuration*.
+if the whole process goes well, the output will be like below:
 
 
