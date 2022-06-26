@@ -35,6 +35,9 @@ on the action pannel at the left there exist some useful actions. build action, 
 after upoading the code the result will be like this:
 ![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/flash%20res.jpg)
 THen we can open the board's terminal to see it's printed output by the below icon:
+![alt text](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/nRF%20connect/open%20terminal.jpg)
+
+
 
 
 
