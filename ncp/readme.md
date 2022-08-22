@@ -26,4 +26,33 @@ As mentioned, the processor side is called NCP and the host side is called NCPHo
  
  ![configuring board](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/config.jpg)
  
+ now you can hit that "build configuration" button to have your application built. Hopefully, you can see that the building process has finished great.
  
+ ##### 3. flash the board:
+ the last step after building the application is to flash it on the board.
+ 
+ if all the above steps work fine, then you have your nRF52840 programmed to handle the zigbee network specifications
+ 
+ ##### alternatively you can rely on that NCP Host file you have downloaded. In it, you can find a pre built firmware for some boards in the ncp_fw directory. using this, you can program both the nRF52840dk and nRF52840dongle through the terminal but with different syntax
+ 
+  here is the files contained in the ncp_fw directory:
+  
+ ![ncp_fw](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/ncp_fw.jpg)
+ 
+ For nRF52840dk communicating through UART use "ncp.nrf52840dk_nrf52840.hex", For nRF52840dk communicating through USB use "ncp.usb.nrf52840dk_nrf52840.hex", and for nRF52840 dongle use "ncp.usb.nrf52840dongle_nrf52840.zip".
+ for programing the boards through command line use this [link](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.11.2.0/zboss_ncp_host.html)
+
+ For nRF52840 dk use this command:
+ 
+ ```
+ 
+ nrfjprog –program ncp_fw/<firmware> –chiperase –reset
+ 
+ ```
+and for nRF52840dongle use :
+```
+
+nrfutil dfu usb-serial -pkg ncp_fw/ncp.usb.nrf52840dongle_nrf52840.zip -p /dev/ttyACMx
+
+```
+and for that x in the ttyACMx I'll explain in the board connection part
