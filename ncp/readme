@@ -1,2 +1,0 @@
-# zigbee gateway
-in this project we are going to create a zigbee gateway. this gateway must initiate the zigbee network, communicate with the connected devices, and send their data to the server. In this project, we are going to use nRF 52840 dk, nRF 52840 dongle and orange pi zero plus
