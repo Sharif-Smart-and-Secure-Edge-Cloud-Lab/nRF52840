@@ -46,13 +46,37 @@ As mentioned, the processor side is called NCP and the host side is called NCPHo
  
  ```
  
- nrfjprog –program ncp_fw/<firmware> –chiperase –reset
+$ nrfjprog –program ncp_fw/<firmware> –chiperase –reset
  
  ```
 and for nRF52840dongle use :
 ```
 
-nrfutil dfu usb-serial -pkg ncp_fw/ncp.usb.nrf52840dongle_nrf52840.zip -p /dev/ttyACMx
+$ nrfutil dfu usb-serial -pkg ncp_fw/ncp.usb.nrf52840dongle_nrf52840.zip -p /dev/ttyACMx
 
 ```
 and for that x in the ttyACMx I'll explain in the board connection part
+
+some notes:
+1. for using "nrfjprog" you need to install nRF commandline tools. [here](https://github.com/bus710/nrf-development-in-linux) is how to install that:
+
+```
+$ wget https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-13-0/nRF-Command-Line-Tools_10_13_0_Linux64.zip
+$ unzip nRF-Command-Line-Tools_10_13_0_Linux-amd64.zip -d tools
+
+$ cd tools/nRF-Command-Line-Tools_10_13_0_Linux64
+$ tar xvf nRF-Command-Line-Tools_10_13_0_Linux-amd64.tar.gz 
+$ sudo dpkg -i JLink_Linux_V750b_x86_64.deb
+$ sudo dpkg -i nRF-Command-Line-Tools_10_13_0_Linux-amd64.deb
+
+```
+2. nrfutil is a python package so you should go through [this]=(https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrfutil%2FUG%2Fnrfutil%2Fnrfutil_installing.html):
+
+```
+$ pip install nrfutil
+
+```
+
+
+
+
