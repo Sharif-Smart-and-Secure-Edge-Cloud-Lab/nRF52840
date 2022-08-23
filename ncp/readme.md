@@ -50,7 +50,8 @@ As mentioned, the processor side is called NCP and the host side is called NCPHo
  
  ```
  
-$ nrfjprog –program ncp_fw/<firmware> –chiperase –reset
+$ nrfjprog --program ncp_fw/<firmware> --chiperase
+$ nrfjprog --program ncp_fw/<firmware> --reset
  
  ```
 and for nRF52840dongle use :
@@ -110,9 +111,11 @@ and if the board connects properly the resultant output will be like this:
 ![board3](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/board%20connection%203.jpg)
 
 And again remmember the ttyACM number.
+if the computer can't detect dongle try uninstalling the device in the device manager.
 
 ### running the application
-Now the next step is to run the application. nordic application layer development uses C language. Nordic provides a platform for DSR ZBOSS zigbee stack SDK. [here](https://dsr-zboss.com/#!/) you can find information about ZBOSS.
+Now the next step is to run the application. nordic application layer development uses C language. Nordic provides a platform for DSR ZBOSS zigbee stack SDK. [here](https://dsr-zboss.com/#!/) you can find information about ZBOSS. Nordic provides bunch of application samples:
+
 
 
 
