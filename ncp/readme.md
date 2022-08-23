@@ -70,12 +70,32 @@ $ sudo dpkg -i JLink_Linux_V750b_x86_64.deb
 $ sudo dpkg -i nRF-Command-Line-Tools_10_13_0_Linux-amd64.deb
 
 ```
-2. nrfutil is a python package so you should go through [this]=(https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrfutil%2FUG%2Fnrfutil%2Fnrfutil_installing.html):
+2. nrfutil is a python package so you should go through [this](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrfutil%2FUG%2Fnrfutil%2Fnrfutil_installing.html):
 
 ```
 $ pip install nrfutil
 
 ```
+
+### board connection:
+
+#### nRF52840dk:
+For connecting nRF52840dk you need two USB cables. the first one should be connected to the J2 port of the board (external supply). the second one must be connected to the nRF USB. the first one works as the power source of the board while the second one is used for the communication between the NCP firmware on the board and the NCP Host applicaton on the linux ( or orange pi etc.). For programming the board using "nrfjprog" you need to use the J2 infos. 
+now you need to know the communication interface of your host. For that you need to do this:
+```
+
+$ sudo dmesg -w
+
+```
+if the board has been programmed well then the output of the above command is:
+
+![board2](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/board%20connection%202.jpg)
+
+remmember the ttyACM numbers. the Jlink one is asociated to the J2 connector and the zigbee NCP one is associated with the nRF USB connector.
+
+
+
+
 
 
 
