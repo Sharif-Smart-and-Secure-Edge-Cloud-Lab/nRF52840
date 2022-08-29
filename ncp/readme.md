@@ -114,8 +114,31 @@ And again remmember the ttyACM number.
 if the computer can't detect dongle try uninstalling the device in the device manager.
 
 ### running the application
-Now the next step is to run the application. nordic application layer development uses C language. Nordic provides a platform for DSR ZBOSS zigbee stack SDK. [here](https://dsr-zboss.com/#!/) you can find information about ZBOSS. Nordic provides bunch of application samples:
+Now the next step is to run the application. nordic application layer development uses C language. Nordic provides a platform for DSR ZBOSS zigbee stack SDK. [here](https://dsr-zboss.com/#!/) you can find information about ZBOSS. Nordic provides bunch of application samples for ncp architecture including simple_gw, light_bulb, dimmable_light etc.
+To run a ncp architecture examples, you need to build the library first. for that, you need to go to the src directory of the ncp Host zip file. Then use these command to build the libraries:
+'''
 
+$ make rebuild make zbosses
+
+'''
+Then get back to the ncp Host directory ( one dirctory above src) and use:
+'''
+
+$ make 
+
+'''
+to build the applications. Then go  to "ncpHost/application" to see the available applications. here we use simple_gw so the directory would be "ncpHost/application/simple_gw" here run the below code:
+'''
+
+$ sudo NCP_SLAVE_PTY=/dev/ttyACMx ./<simple_gw>
+
+'''
+Running the above command creates log files in the directory at which it run. you can open the log files by many ways. one of them is:
+'''
+
+$ tail -f <log_file_name>
+
+'''
 
 
 
