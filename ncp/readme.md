@@ -156,7 +156,7 @@ you can use your creativity to furthur design tests bu the use of available exam
 ![b-s-g](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/b-s-g.jpg)
 
 ### adding clusters:
-[here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_zigbee_adding_clusters.html) is how you can add a new  cluster to the gateway the codes are:( make sure to add them in an appropriate place in the simple_gw)
+[here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_zigbee_adding_clusters.html) is how you can add a new  cluster to the gateway the codes are:( make sure to add them in an appropriate place in the simple_gw.c)
 ``` c
 #include <addons/zcl/zb_zcl_temp_measurement_addons.h>
 
