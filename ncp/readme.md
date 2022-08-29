@@ -116,30 +116,80 @@ if the computer can't detect dongle try uninstalling the device in the device ma
 ### running the application
 Now the next step is to run the application. nordic application layer development uses C language. Nordic provides a platform for DSR ZBOSS zigbee stack SDK. [here](https://dsr-zboss.com/#!/) you can find information about ZBOSS. Nordic provides bunch of application samples for ncp architecture including simple_gw, light_bulb, dimmable_light etc.
 To run a ncp architecture examples, you need to build the library first. for that, you need to go to the src directory of the ncp Host zip file. Then use these command to build the libraries:
-'''
+```
 
 $ make rebuild make zbosses
 
-'''
+```
 Then get back to the ncp Host directory ( one dirctory above src) and use:
-'''
+```
 
 $ make 
 
-'''
+```
 to build the applications. Then go  to "ncpHost/application" to see the available applications. here we use simple_gw so the directory would be "ncpHost/application/simple_gw" here run the below code:
-'''
+```
 
 $ sudo NCP_SLAVE_PTY=/dev/ttyACMx ./<simple_gw>
 
-'''
+```
 Running the above command creates log files in the directory at which it run. you can open the log files by many ways. one of them is:
-'''
+```
 
 $ tail -f <log_file_name>
 
-'''
+```
+#### testing
+For testing, you can run a single protocol SoC architecture light bulb example on one of the nRF52840 dk using vscode. The steps are:
+1. run the simple_gw example
+2. run the light bulb example
+3. LED 1 of light bulb starts blinking indicating that its main thread is running
+4. when the light bulb connects to a zigbee network, then LED 3 turns on;
+5. LED 4 on the light bulb is the original bulb. meaning that whatever command gateway sends, LED 4 gets effected.
 
+![dongle_dk](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/dongle-dk.jpg)
+
+![dk-dk](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/dk-dk.jpg)
+
+you can use your creativity to furthur design tests bu the use of available examples like you can use light switch and light bulb connecting to the gateway.
+
+![b-s-g](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/b-s-g.jpg)
+
+### adding clusters:
+[here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_zigbee_adding_clusters.html) is how you can add a new  cluster to the gateway the codes are:( make sure to add them in an appropriate place in the simple_gw.c)
+``` c
+#include <addons/zcl/zb_zcl_temp_measurement_addons.h>
+
+
+struct zb_device_ctx {
+        zb_zcl_basic_attrs_t            basic_attr;
+        zb_zcl_identify_attrs_t         identify_attr;
+        zb_uint8_t                      on_off_switch_type_attr;
+        zb_uint8_t                      on_off_switch_actions_attr;
+        zb_zcl_temp_measurement_attrs_t temp_measure_attrs;
+};
+
+
+ZB_ZCL_DECLARE_TEMP_MEASUREMENT_ATTRIB_LIST(temp_measurement_attr_list,
+                                            &dev_ctx.temp_measure_attrs.measure_value,
+                                            &dev_ctx.temp_measure_attrs.min_measure_value,
+                                            &dev_ctx.temp_measure_attrs.max_measure_value,
+                                            &dev_ctx.temp_measure_attrs.tolerance);
+
+```
+``` c
+ZB_HA_DECLARE_TEMPERATURE_SENSOR_CLUSTER_LIST(temperature_sensor_clusters, basic_attr_list, identify_attr_list, temp_measurement_attr_list);
+```
+``` c
+#define TEMPERATURE_SENSOR_ENDPOINT  12
+
+ZB_HA_DECLARE_TEMPERATURE_SENSOR_EP(temperature_sensor_ep, TEMPERATURE_SENSOR_ENDPOINT, temperature_sensor_clusters);
+```
+``` c
+
+ZBOSS_DECLARE_DEVICE_CTX_3_EP(app_template_ctx, temperature_sensor_ep, on_off_switch_ep, app_template_ep);
+
+```
 
 
 
