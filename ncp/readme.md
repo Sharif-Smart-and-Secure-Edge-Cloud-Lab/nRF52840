@@ -57,7 +57,7 @@ $ nrfjprog --program ncp_fw/<firmware> --reset
 and for nRF52840dongle use :
 ```
 
-$ nrfutil dfu usb-serial -pkg ncp_fw/ncp.usb.nrf52840dongle_nrf52840.zip -p /dev/ttyACMx
+$ sudo nrfutil dfu usb-serial -pkg ncp_fw/ncp.usb.nrf52840dongle_nrf52840.zip -p /dev/ttyACMx
 
 ```
 and for that x in the ttyACMx I'll explain in the board connection part
