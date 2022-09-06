@@ -208,8 +208,23 @@ user interface:
 ![gw_sensor_connectivity](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/gw%20s%20connectivity.jpg)
 
 then we tried to see the transfered data between different sonoff's gateway modules on osciloscope but nothing has been shown. it seems that either the transfer media differ or the rate of transfer is so low.
-to solve this problem we tried to implement zigbee sniffer to sniff zigbee packets all around. for this, go through the below procedure:
-1. download the sniffer firmware: [here]
+to solve this problem we tried to implement zigbee sniffer to sniff zigbee packets all around. for this, go through the below [procedure](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_sniffer_802154%2FUG%2Fsniffer_802154%2Fintro_802154.html):
+1. installing the sniffer firmware: here is the [link](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_sniffer_802154%2FUG%2Fsniffer_802154%2Fintro_802154.html).
+2. configuring wireshark: here is the [link](https://infocenter.nordicsemi.com/topic/ug_sniffer_802154/UG/sniffer_802154/installing_sniffer_802154_linux.html).
+ [here](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/datasheets/nRF_Sniffer_802154_User_Guide_v0.7.2.pdf) you can find the whole compact procedure.
+ then open the wireshark and with the nRF interface determine the channel to receive the packets.
+ unfortunately we couldn't receive any packets in any channel so we tried to check whether the  RF module works properly; therefore, Bluetooth LE implementation was what we did next.
+  To implement bluetooth LE sniffer follow this[Link](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/datasheets/nRF_Sniffer_BLE_UG_v4.1.0.pdf).
+  you can find the received packets [here](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/ble.pcap).
+  ![ble_pcap](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/blepcap.jpg)
+  
+  ##### data acquisition
+  you can find some useful information on how to read data from the zigbee devices in the links below. there you can find some API  and code snippets to read data. these codes should be added to the gateway code.
+  1. [first link](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.1.0%2Fusing_zigbee__z_c_l.html&cp=7_3_3_4&anchor=cluster_declaration_custom)
+  2. [second link](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.1.0%2Fzigbee_prog_principles.html&anchor=zigbee_stack_memory_mgmt)
+ 
+  
+  
 
 
 
