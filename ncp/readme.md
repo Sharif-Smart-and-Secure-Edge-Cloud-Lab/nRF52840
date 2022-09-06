@@ -226,7 +226,9 @@ to solve this problem we tried to implement zigbee sniffer to sniff zigbee packe
  
  
 ## connection between opi and the server
-in this part we are using mqtt to handle messaging between the opi and the server first we go through handling the situation using command line. first it is needed to have the mqtt dependencies installed on the machine:
+in this part we are using mqtt to handle messaging between the opi and the server 
+MQTT (Message Queuing Telemetry Transport) is a publish/subscribe messaging protocol that works on top of the TCP/IP protocol. The first version of the protocol was developed by Andy Stanford-Clark of IBM and Arlen Nipper of Cirrus Link in 1999. What makes MQTT faster than say sending HTTP requests with your IoT device is MQTT messages can be as small as 2 bytes, whereas HTTP requires headers which contains a lot of information that other devices might not care about. Also, if you have multiple devices waiting for a request with HTTP, you'll need to send a POST action to each client. With MQTT, when a server receives information from one client, it will automatically distribute that information to each of the interested clients.
+first we go through handling the situation using command line. first it is needed to have the mqtt dependencies installed on the machine:
 
 ```
 $ sudo apt install mosquitto mosquitto-clients
@@ -245,9 +247,37 @@ $ mosquitto_pub -h Host -m "ON" -t "<topic>"
 
 ```
 
-for handling the requests and saving them we need to use sql, you can use this [link](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/sql/server.sh) to get to know the sql commands.
+for handling the requests and saving them we need to use sql.SQL stands for Structured Query Language. SQL is used to create, remove, alter the database and database objects in a database management system and to store, retrieve, update the data in a database. SQL is a standard language for creating, accessing, manipulating database management system. you can use this [link](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/sql/server.sh) to get to know the sql commands.
 
 
+as this commandline api doesn't work as expected it is great to have mosquitto and sql merged together in a c file. the mosquitto side is implemented in c to add functionality of using sql in it. for sql side we use some bash snippets which are run by the c program. to install sql:
+```
+
+$ wget -c https://repo.mysql.com//mysql-apt-config_0.8.13-1_all.deb
+$ sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb 
+$ sudo apt-get install mysql-server
+$ sudo systemctl start mysql.service
+
+```
+you can find the c codes for publishing and subscribing [here](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/tree/farbod-yadollahi/mqtt/mqtt1/mqtt)
+
+to run the subscriber side, run this command in the appropriate directory:
+```
+$ sudo ./mqtt_sub
+```
+then on the orange pi go to the appropriate directory and run the below command. make sure that the message.txt have information. for a sample example you can use the data in message2.txt and copy them to message.txt if message.txt is empty. it is the message.txt being used while the mqtt is running.
+
+```
+$ ./mqtt_pub
+```
+here you can find the result:
+
+![opiAndUbuntu](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/mqtt/mqtt1/mqtt/opi%20and%20ubuntu.jpg)
+here you can find the sql side:
+
+![sql](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/mqtt/mqtt1/mqtt/results/sql.jpg)
+
+to see the result videos refer o this [link](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/mqtt/mqtt1/mqtt/results/VID_20220906_170106_692.mp4)
 
 
   
