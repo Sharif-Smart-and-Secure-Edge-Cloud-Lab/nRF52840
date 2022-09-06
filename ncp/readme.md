@@ -198,12 +198,18 @@ ZBOSS_DECLARE_DEVICE_CTX_3_EP(app_template_ctx, temperature_sensor_ep, on_off_sw
 
 ### connectivity of sensors to the gateway
 here we try to connect the available zigbee devices to the gateway. there are two temperature sensors of xiaomi and sonoff co. being used. To do that we long press the only available buttons on the sensors for 5 second, so the built in led on them blinks three time. here the sensors enter pairing mode. then we run the gatewway app and observe the generated logs for any useful information corresponding to the sensors' connectivity. there can be a tinge of evidence rgarding the fact that the sensors do get conneted to the gateway but they are not satisfyingly acceptable. No transfered data has been written in the logfile. so we go through checking the connectivity of the sensor to the sonoff gateway. here we used the eWeLink android app to monitor and control the network:
+sonoff gateway:
 ![sonoff_gateway](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/sonoff%20gateway.jpg)
 
+gateway and sensors:
 ![gw_and_sensors](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/gw%20and%20sensors.jpg)
 
-1[gw_sensor_connectivity](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/gw%20s%20connectivity.jpg)
+user interface:
+![gw_sensor_connectivity](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/gw%20s%20connectivity.jpg)
 
+then we tried to see the transfered data between different sonoff's gateway modules on osciloscope but nothing has been shown. it seems that either the transfer media differ or the rate of transfer is so low.
+to solve this problem we tried to implement zigbee sniffer to sniff zigbee packets all around. for this, go through the below procedure:
+1. download the sniffer firmware: [here]
 
 
 
