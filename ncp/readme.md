@@ -11,6 +11,7 @@ nRf52840 provides a powerful tool to implement a zigbee network. there are plent
 
 ![architecture](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/architecture.jpg)
 
+ #### for information on how to use and run SoC based architecture take a look at this [link](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/tree/farbod-yadollahi/nRF%20connect). just use the zugbee examples like light bulb or network coordinator examples.
  [Here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/zigbee/ncp/README.html) you can find the step by step process of running a demo. 
 As mentioned, the processor side is called NCP and the host side is called NCPHost. below you can find the connection diagram. 
 
