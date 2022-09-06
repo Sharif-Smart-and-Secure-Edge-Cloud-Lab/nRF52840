@@ -223,6 +223,33 @@ to solve this problem we tried to implement zigbee sniffer to sniff zigbee packe
   1. [first link](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.1.0%2Fusing_zigbee__z_c_l.html&cp=7_3_3_4&anchor=cluster_declaration_custom)
   2. [second link](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.1.0%2Fzigbee_prog_principles.html&anchor=zigbee_stack_memory_mgmt)
  
+ 
+ 
+## connection between opi and the server
+in this part we are using mqtt to handle messaging between the opi and the server first we go through handling the situation using command line. first it is needed to have the mqtt dependencies installed on the machine:
+
+```
+$ sudo apt install mosquitto mosquitto-clients
+
+```
+then you can simply use the below command to subscribe to a topic:
+```
+
+$ mosquitto_sub -h HOST -t "<topic>"
+
+```
+for publishing a message you can use:
+
+```
+$ mosquitto_pub -h Host -m "ON" -t "<topic>"
+
+```
+
+for handling the requests and saving them we need to use sql, you can use this [link](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/sql/server.sh) to get to know the sql commands.
+
+
+
+
   
   
 
