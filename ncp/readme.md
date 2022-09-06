@@ -272,7 +272,7 @@ $ ./mqtt_pub
 ```
 here you can find the result:
 
-![opiAndUbuntu](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/mqtt/mqtt1/mqtt/opi%20and%20ubuntu.jpg)
+![opiAndUbuntu](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/mqtt/mqtt1/mqtt/results/opi%20and%20ubuntu.jpg)
 here you can find the sql side:
 
 ![sql](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/mqtt/mqtt1/mqtt/results/sql.jpg)
