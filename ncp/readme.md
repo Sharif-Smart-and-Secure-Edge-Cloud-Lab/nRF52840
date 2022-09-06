@@ -140,6 +140,8 @@ Running the above command creates log files in the directory at which it run. yo
 $ tail -f <log_file_name>
 
 ```
+
+unfortunately the ZBOSS libraries could not be built on opi zero plus. some processor architecture assertion failure caused the problem. It seems there is a problem with cross compiling issues. 
 #### testing
 For testing, you can run a single protocol SoC architecture light bulb example on one of the nRF52840 dk using vscode. The steps are:
 1. run the simple_gw example
