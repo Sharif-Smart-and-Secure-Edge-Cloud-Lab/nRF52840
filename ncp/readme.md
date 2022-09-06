@@ -194,6 +194,17 @@ ZB_HA_DECLARE_TEMPERATURE_SENSOR_EP(temperature_sensor_ep, TEMPERATURE_SENSOR_EN
 ZBOSS_DECLARE_DEVICE_CTX_3_EP(app_template_ctx, temperature_sensor_ep, on_off_switch_ep, app_template_ep);
 
 ```
+[here](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/tree/farbod-yadollahi/ncp/simple_gw_1) is the link to the added cluster gw code.
+
+### connectivity of sensors to the gateway
+here we try to connect the available zigbee devices to the gateway. there are two temperature sensors of xiaomi and sonoff co. being used. To do that we long press the only available buttons on the sensors for 5 second, so the built in led on them blinks three time. here the sensors enter pairing mode. then we run the gatewway app and observe the generated logs for any useful information corresponding to the sensors' connectivity. there can be a tinge of evidence rgarding the fact that the sensors do get conneted to the gateway but they are not satisfyingly acceptable. No transfered data has been written in the logfile. so we go through checking the connectivity of the sensor to the sonoff gateway. here we used the eWeLink android app to monitor and control the network:
+![sonoff_gateway](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/sonoff%20gateway.jpg)
+
+![gw_and_sensors](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/gw%20and%20sensors.jpg)
+
+1[gw_sensor_connectivity](https://github.com/Sharif-Smart-and-Secure-Edge-Cloud-Lab/nRF52840/blob/farbod-yadollahi/ncp/gw%20s%20connectivity.jpg)
+
+
 
 
 
